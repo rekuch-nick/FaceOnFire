@@ -1,0 +1,29 @@
+0.01, 3/22/2020
+	first playtest
+	
+0.012, 3/25/2020
+	talent tree removed, hat system added
+	monsters can now jump
+	monster no longer fall through platforms
+	many monster types added
+	
+	put floor in fireman rooms
+	fireman now spawns candles
+	
+	wood blocks can now contain objects
+	
+	new rooms and title types added
+	
+	pickups now spawn over time instead of all at once each screen
+	
+	ocean water no longer kills on contact 
+		(it still kills if you fall off-screen)
+	
+	hop&bop attack is now automatic while falling
+		(you still have to hold jump to bounce high off of the monsters)
+	releasing the dash button now cancels the dash attack
+	tap down rapidly to burn through blocks very fast
+	fly changed to be activated by holding the jump button after a jump
+	
+	
+	"rank up" pickups will start to appear after you collect 25 / 50 candles in a single life

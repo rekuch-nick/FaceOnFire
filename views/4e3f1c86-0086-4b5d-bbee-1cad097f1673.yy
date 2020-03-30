@@ -1,0 +1,31 @@
+{
+    "id": "4e3f1c86-0086-4b5d-bbee-1cad097f1673",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "4e3f1c86-0086-4b5d-bbee-1cad097f1673",
+    "children": [
+        "864d53dc-8143-403e-8aeb-892385b21414",
+        "6a7a1f12-8a97-4729-bcda-5f2417f79cae",
+        "e6da2fb6-2a1b-49a0-89c2-8095b02647ad",
+        "16a36841-51a0-4c64-bfcc-f98c49ca17d1",
+        "07cc9e55-be35-4b40-9191-e9bdfa2bb7d3",
+        "80152eac-7bb9-486f-a6dc-45faaf90053a",
+        "8537908c-dca9-403a-86ab-47db7f87654b",
+        "7682b75f-9b27-4e0b-b63f-e30795990db9",
+        "6d167356-c223-4094-81b5-900a168ee01e",
+        "41af73f7-cf59-4ace-99dc-1b55a1eae5bc",
+        "f6bc003f-daac-4afa-a1e0-aeba78337a6b",
+        "bbba60e8-737a-4948-98e3-68dd9ec49713",
+        "15502a8a-12ba-400e-ba6f-e9ce8f6dba05",
+        "1076f3ce-15ae-4803-8455-24e843205705",
+        "c9035c4e-154b-47ae-9c6c-409b84864e6c",
+        "0efa4eae-87c0-4e9a-a32d-533ce49f8850",
+        "b070c81e-7155-45d0-a670-bbebe94b1245",
+        "81ba8f79-5b1b-404a-a81f-1892755b590b",
+        "ef653a20-0da4-45ab-af52-a7cc25284266"
+    ],
+    "filterType": "GMObject",
+    "folderName": "tiles",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

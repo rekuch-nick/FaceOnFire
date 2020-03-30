@@ -1,0 +1,30 @@
+{
+    "id": "8da18b80-1091-43c9-bb55-19c1f9770f74",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "8da18b80-1091-43c9-bb55-19c1f9770f74",
+    "children": [
+        "297eeaba-bba5-4a49-8b5b-1989bb28fe10",
+        "bfa2c10d-9d2d-49a1-a1e9-8d7d52fe7248",
+        "da2f8633-2e13-46de-aa5b-3c7a64411bd5",
+        "d625aec1-2a80-4b6b-8e02-23265634eeee",
+        "06362b3f-890d-4f4a-bdeb-75a29864c1df",
+        "660b3ecf-3f80-433e-be18-a398672e3e2c",
+        "9966e92f-a268-4098-8b25-3012ac245677",
+        "e2e7ceb8-2957-4ee5-bd81-9a97af3b841b",
+        "6819793a-bc92-457b-bc28-16af2e902179",
+        "f5deb2f0-cac8-4c79-b1c5-babbccda6fc3",
+        "12b09731-7da4-4bd5-aaf3-a01e10338620",
+        "e71c7507-c36f-4815-ac9b-4915230da732",
+        "b59e7e6c-c923-4083-b44b-6aa0b16c03b8",
+        "816d43c8-cc16-4737-b5a9-de493648ec74",
+        "a29833e1-0e29-40ce-8a22-a8d160f4e476",
+        "204aa1d2-f4b4-4a67-bf46-d75fe0a2efec",
+        "d13bf8db-d44d-4e29-a22a-4cf38d5d44ae",
+        "7cfe17b9-415b-4245-ad7b-90f1af90f60f"
+    ],
+    "filterType": "GMObject",
+    "folderName": "pickups",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}
