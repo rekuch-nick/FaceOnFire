@@ -36,6 +36,8 @@ bodyX = 14;
 yShove = 6;
 xShove = 6;
 
+damageSpawn = false;
+
 hp = 1;
 mhp = 1;
 incomingDamage = 0;
@@ -109,3 +111,7 @@ stunTime = 0;
 
 woundsThisSecond = 0;
 woundPerSecondMax = 100;
+
+fadeIn = false;
+
+finalPhase = 0;

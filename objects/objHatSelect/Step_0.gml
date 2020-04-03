@@ -10,8 +10,13 @@ if(player.icd < 1){
 			gamepad_button_check(global.gamepadID, world.buttonJump) ||
 			gamepad_button_check(global.gamepadID, world.buttonFly) ||
 			gamepad_button_check(global.gamepadID, world.buttonCharge) ||
-			gamepad_button_check(global.gamepadID, gp_start))
-			&& player.hasHat[cursor] ){
+			gamepad_button_check(global.gamepadID, gp_start) ||
+			keyboard_check(vk_enter) ||
+			keyboard_check(ord("1")) ||
+			keyboard_check(ord("2")) ||
+			keyboard_check(ord("Z")) ||
+			keyboard_check(ord("X"))
+			) && player.hasHat[cursor] ){
 				
 				playerResetSkills();
 				
@@ -22,11 +27,14 @@ if(player.icd < 1){
 				if(cursor == 0){
 					player.skillBreath = true;
 					player.skillDash = true;
+					player.fireballTimeMax = 15;
 				}
 				if(cursor == 1){
 					player.basicShot = objPlayerBreath; player.tossCDMax = 10;
 					player.skillHealFast = true;
 					player.skillMultiJump = true;
+					player.skillRevenge = true;
+					player.skillJumpShot = true;
 				}
 				if(cursor == 2){
 					player.basicShot = objPlayerWave;
@@ -43,15 +51,15 @@ if(player.icd < 1){
 					player.skillMultiJump = true;
 					player.skillFireTrail = true;
 					player.extraHearts = true;
+					player.multiBreath = true;
 				}
 				if(cursor == 5){
 					player.jumpPower = 18;
 					player.skillHealFast = true;
 					player.skillSparkToss = true;
-					player.skillWallSlide = true;
 					player.tossCDMax = 10;
 					player.skillSprint = true;
-					player.skillLadder = true; player.bombsMax = 1;
+					player.skillLadder = true; player.bombsMax = 3;
 				}
 				if(cursor == 6){
 					player.skillFly = true;
@@ -118,14 +126,16 @@ if(player.icd < 1){
 		
 
 		if(gamepad_button_check_pressed(global.gamepadID, gp_padl) || 
-				gamepad_axis_value(global.gamepadID, gp_axislh) < -.5){
+				gamepad_axis_value(global.gamepadID, gp_axislh) < -.5 ||
+				keyboard_check(vk_left) || keyboard_check(ord("A"))){
 			
 			cursor --;
 			if(cursor < 0){ cursor = 11; }
 			
 			player.icd = 5;
 		} else if(gamepad_button_check_pressed(global.gamepadID, gp_padr) ||
-				gamepad_axis_value(global.gamepadID, gp_axislh) > .5){
+				gamepad_axis_value(global.gamepadID, gp_axislh) > .5 ||
+				keyboard_check(vk_right) || keyboard_check(ord("d"))){
 	
 			
 			cursor ++;
@@ -135,13 +145,15 @@ if(player.icd < 1){
 		}
 		
 		if(gamepad_button_check_pressed(global.gamepadID, gp_padu) || 
-				gamepad_axis_value(global.gamepadID, gp_axislv) < -.5){
+				gamepad_axis_value(global.gamepadID, gp_axislv) < -.5 ||
+				keyboard_check(vk_up) || keyboard_check(ord("W"))){
 			
 			
 			
 			player.icd = 5;
 		} else if(gamepad_button_check_pressed(global.gamepadID, gp_padd) ||
-				gamepad_axis_value(global.gamepadID, gp_axislv) > .5){
+				gamepad_axis_value(global.gamepadID, gp_axislv) > .5 ||
+				keyboard_check(vk_down) || keyboard_check(ord("S"))){
 	
 			
 			

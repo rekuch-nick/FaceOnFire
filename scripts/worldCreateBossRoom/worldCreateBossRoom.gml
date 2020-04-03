@@ -1,5 +1,10 @@
 
-
+hasFade = false;
+hasFan = false;
+hasGeysers = false;
+hasHydrants = false;
+hasSprings = false;
+hasZap = false;
 
 mobsRemaining = 0;
 
@@ -13,13 +18,22 @@ for(var a=0; a<25; a++){
 	}
 }
 
+do {
+	worldPositionPlayer();
+} until (player.y < 200);
+
+
 var w = ceil(player.stage / 10);
+while(w > 10){ w -= 10; }
 if(w == 2) {
 	instance_create_depth(400, 680, 20, objBoss02);
 } else if (w == 4) {
 	instance_create_depth(400, 680, 20, objBoss03);
 } else if (w == 6) {
 	instance_create_depth(400, 680, 20, objBoss04);
+} else if (w == 8) {
+	player.x = 100; player.y = 100;
+	instance_create_depth(400, 100, 20, objMegaDrop);
 } else {
 	instance_create_depth(400, 680, 20, objBoss01);
 	
@@ -36,8 +50,6 @@ if(w == 2) {
 	
 }
 
-do {
-	worldPositionPlayer();
-} until (player.y < 200);
+
 
 

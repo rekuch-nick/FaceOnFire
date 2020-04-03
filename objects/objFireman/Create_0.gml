@@ -1,6 +1,8 @@
 
 
-shots = 8;
+shots = 4;
+if(player.stage > 30){ shots += 1; }
+if(player.stage > 60){ shots += 1; }
 
 shotCDMax = 30 * 6;
 shotCD = shotCDMax;

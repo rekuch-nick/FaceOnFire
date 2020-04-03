@@ -10,7 +10,7 @@ if(keyKeeper){
 	s += string( ceil((hp / mhp) * 100) );
 	s = "%" + s;
 
-	draw_text_transformed(670, 20, s, 2, 2, 0);
+	draw_text_transformed(650, 20, s, 2, 2, 0);
 	
 }
 

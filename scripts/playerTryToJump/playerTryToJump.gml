@@ -78,6 +78,7 @@ if(jumpReleased && jumps > 0){ // && (playerOnGround() || playerCoyoteTime())){
 if(flyTime > 0 && ySpeed >= flySpeed){
 	flying = true;
 	flyTime --;
+	readoutTime = 30;
 }
 
 

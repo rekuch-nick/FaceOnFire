@@ -24,3 +24,9 @@ image_yscale = gro;
 
 
 existedTime ++;
+
+
+if(player.stage == 101){
+	x = player.x < x ? x - 1 : x + 1;
+	y = player.y < y ? y - 1 : y + 1;
+}

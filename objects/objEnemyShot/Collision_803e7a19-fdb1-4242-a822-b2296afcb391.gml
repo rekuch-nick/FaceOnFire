@@ -10,5 +10,7 @@ if(xStartSpeed != 123456 && !flip){
 		flip = true;
 		xStartSpeed *= -1;
 		yStartSpeed *= -1;
+		range = 1000;
+		timeCD = 300;
 	}
 }

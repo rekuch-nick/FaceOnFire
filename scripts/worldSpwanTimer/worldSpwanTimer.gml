@@ -10,7 +10,7 @@ if(world.mobsRemaining > 0){
 if(!ds_list_empty(world.pickups)){
 	world.pickupCD --;
 	if(world.pickupCD < 1){
-		world.pickupCD = 30 * 10;
+		world.pickupCD = world.pickupCDMax;
 		var t = ds_list_find_value(world.pickups, 0);
 		spawnItem(t);
 		ds_list_delete(world.pickups, 0);
@@ -21,6 +21,12 @@ if(!ds_list_empty(world.pickups)){
 if(world.spawnCD < 1){
 	//world.spawnCD = world.spawnCDMax
 	world.spawnCD = world.mobDelay; // * 300; //////
+	
+	var sum = 0;
+	with(objMob){ sum ++; }
+	if(sum >= 10){ world.spawnCD += 60; }
+	if(sum >= 14){ world.spawnCD += 60; }
+	if(sum >= 18){ world.spawnCD += 60; }
 	
 	
 	
@@ -84,8 +90,12 @@ if(world.hasGeysers && player.stage % 10 != 4){
 	if(world.geyserCD < 1){
 		world.geyserCD = 30 * 14;
 		
-		var maxGeysers = 2;
-		if(player.stage > 90){ maxGeysers = 3; }
+		var maxGeysers = 3;
+		if(player.stage > 90){ maxGeysers = 4; }
+		if(player.stage == 75){ 
+			world.geyserCD -= (30 * 8);
+			maxGeysers = 12; 
+		}
 		
 		if(instance_number(objGeyser) < maxGeysers){
 			instance_create_depth(16 + irandom_range(0, 24) * 32, 800, 16, objGeyser);

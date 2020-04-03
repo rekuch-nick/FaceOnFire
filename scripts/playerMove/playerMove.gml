@@ -1,5 +1,6 @@
 
 //screen border handeling
+
 if(y > 830){ y = -20;}
 
 fireTrailImpact = 0;
@@ -40,7 +41,7 @@ if(!playerOnGround()){
 
 ////
 meteoAttack = false;
-if( (ySpeed > 1 && skillMeteorStrike) || bounceMeteo ){ meteoAttack = true;}
+if( !onLadder && ( (ySpeed > 1 && skillMeteorStrike) || bounceMeteo )){ meteoAttack = true;}
 
 
 
@@ -170,11 +171,12 @@ for(var i=0; i<abs(xSpeed); i++){
 		
 		if(fireballTime > 0){
 			playSFX(sfxLand);
-			insistJump = 7;
-			ySpeed = -9;
+			insistJump = 15;
+			ySpeed = -15;
 			xPush = -5 * fireballDir;
 			fireballCD -= fireballTime;
 			fireballTime = 0;
+			hurtTime += 15;
 			
 		}
 		

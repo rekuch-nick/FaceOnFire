@@ -3,6 +3,7 @@ worldClearRoom();
 
 //reset some player stuff...
 player.hurt = false;
+player.hurtsThisStage = 0;
 if(player.skillSlowAura){ instance_create_depth(player.x, player.y, -1, objSlowAura); }
 if(player.skillShield && player.shield == noone){
 	var s = instance_create_depth(player.x, player.y, -1, objPlayerShield);
@@ -10,11 +11,18 @@ if(player.skillShield && player.shield == noone){
 }
 player.bombs = player.bombsMax;
 player.onLadder = false;
+player.xPush = 0;
+player.ladderChargeCD = 30 * 30; // ?
+player.flyTime = 0;
 
 
 //setup world stuff...
+fadeBlockTime = 30 * 10;
 inWorld = ceil(player.stage / 10);
 inZone = player.stage % 10;
+if(ladderOrder > 100){ ladderOrder = 1; }
+pickupCDMax = 300;
+
 
 hasHydrants = false;
 hasSprings = false;
@@ -46,7 +54,9 @@ if(inWorld >= 9){
 }
 
 audio_master_gain(1);
-playMusic(string(inZone));
+if(player.stage == 101){
+	playMusic("win");
+} else { playMusic(string(inZone)); }
 
 arena = false;
 mobsRemaining = 9 + inWorld
@@ -69,6 +79,8 @@ if(player.stage % 10 == 2){
 	worldCreateFreeFall();
 } else if(inZone == 4){
 	worldCreateArena();
+} else if (player.stage == 100){
+	worldCreateLastFight();
 } else if(inZone == 7){
 	worldCreateOcean();
 } else if(inZone == 9){
@@ -77,6 +89,8 @@ if(player.stage % 10 == 2){
 	worldCreateBossRoom();
 } else if (inZone == 5) {
 	worldCreatePlatformArena();
+} else if (player.stage == 101) {
+	worldCreateWin();
 } else {
 	
 	//basic levels
@@ -256,6 +270,12 @@ for(var a=0; a<25; a++){
 			bmap[a, b].xSpot = a;
 			bmap[a, b].ySpot = b;
 			bmap[a, b].extra = instance_create_depth(a * 32, b * 32, 9, objExtraCurse);
+		break;
+		case "woodHeart":
+			bmap[a, b] = instance_create_depth(a * 32, b * 32, 10, objWoodBlock);
+			bmap[a, b].xSpot = a;
+			bmap[a, b].ySpot = b;
+			bmap[a, b].extra = instance_create_depth(a * 32, b * 32, 9, objExtraHeart);
 		break;
 		case "spring":
 			bmap[a, b] = instance_create_depth(a * 32, b * 32, 10, objSpring);

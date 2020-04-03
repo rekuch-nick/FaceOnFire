@@ -42,6 +42,8 @@ player.skillVertShot = false;
 player.skillShield = false;
 player.skillLob = false;
 player.skillLadder = false;
+player.skillRevenge = false;
+player.multiBreath = false;
 
 player.bombs = 0;
 player.bombsMax = 0;
@@ -55,3 +57,4 @@ player.rapidShot = 0;
 player.fireballCDMax = 35;
 if(player.shield != noone){ instance_destroy(player.shield); }
 player.shield = noone;
+player.fireballTimeMax = 25;

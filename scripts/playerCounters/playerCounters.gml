@@ -1,13 +1,16 @@
-if(fireballTime > 0){ fireballTime --; }
+if(fireballTime > 0){ 
+	fireballTime --; 
+	if(fireballTime < 1){ hurtTime += 10; }
+}
 if(fireballCD > 0){ fireballCD --; }
 
 if(insistJump > 0){ insistJump --; }
 
 if(hurt){
 	healCD ++;
-	if(skillHealFast){ healCD ++; }
-	if(skillHealFast2){ healCD += 4; }
-	if(character == 11){ healCD += 14; }
+	//if(skillHealFast){ healCD ++; }
+	//if(skillHealFast2){ healCD += 4; }
+	if(character == 11){ healCD += 14; } ///
 	if(healCD >= healCDMax){
 		playSFX(sfxHeal);
 		hurt = false;
@@ -74,6 +77,15 @@ if(specCD > 0){
 			//var s = instance_create_depth(x, y, -40, objPlayerToss);
 			//s.xSpeed *= -1;
 		}
+	}
+}
+
+if(ladderChargeCD > 0 && skillLadder && bombs < bombsMax){
+	ladderChargeCD --;
+	if(ladderChargeCD < 1){
+		ladderChargeCD = 15;
+		bombs ++;
+		//readoutTime = 30;
 	}
 }
 

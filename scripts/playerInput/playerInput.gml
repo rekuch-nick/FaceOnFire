@@ -7,7 +7,7 @@ if(skillTrueFlight){ xSpeed = 0; ySpeed = 0; }
 
 
 flying = false;
-if(gamepad_button_check(global.gamepadID, world.buttonJump)){
+if(gamepad_button_check(global.gamepadID, world.buttonJump) || keyboard_check(vk_space)){
 	onLadder = false;
 	playerTryToJump();
 	pressingJumpThisFrame = true;
@@ -25,7 +25,8 @@ bopBounce = false;
 
 var holdingUp = false;
 if(gamepad_button_check_pressed(global.gamepadID, gp_padu) || 
-		gamepad_axis_value(global.gamepadID, gp_axislv) < -.5){
+		gamepad_axis_value(global.gamepadID, gp_axislv) < -.5 ||
+		keyboard_check(vk_up) || keyboard_check(ord("W"))){
 	
 	yDPad = -1;
 	if(onLadder){ climbSpeed = -4; }
@@ -37,7 +38,8 @@ if(gamepad_button_check_pressed(global.gamepadID, gp_padu) ||
 
 
 if(gamepad_button_check(global.gamepadID, world.buttonCharge) ||
-	gamepad_button_check(global.gamepadID, world.buttonFly) ){
+	gamepad_button_check(global.gamepadID, world.buttonFly) || 
+	keyboard_check(ord("X")) || keyboard_check(ord("2"))){
 	
 	if(holdingUp && skillCallLightning && lightningCD < 1 && !hurt){
 		lightningCD = 30;
@@ -57,7 +59,7 @@ if(gamepad_button_check(global.gamepadID, world.buttonCharge) ||
 		
 		if(!skillTrueFlight){
 			playSFX(sfxDash);
-			fireballTime = fireballTimeMax;
+			fireballTime= fireballTimeMax;
 		}
 		fireballDir = xDir;
 		fireballCD = fireballCDMax;
@@ -92,22 +94,34 @@ if(gamepad_button_check(global.gamepadID, world.buttonCharge) ||
 		}
 	}
 	
-	if(bombCD < 1 && skillLob && bombs > 0){
-		bombs --;
-		bombCD = 40;
-		instance_create_depth(x + (10 * shotsUseThisDir), y - 10, -40, objPlayerLob);
+	if(bombCD < 1 && skillLob){
+		if(bombs > 0){
+			bombs --;
+			bombCD = 40;
+			readoutTime = 30;
+			instance_create_depth(x + (10 * shotsUseThisDir), y - 10, -40, objPlayerLob);
+		} else {
+			readoutTime = 30;
+		}
 	}
 	
-	if(bombCD < 1 && skillLadder && bombs > 0){
-		bombs --;
-		bombCD = 40;
-		instance_create_depth( 16 + (floor(x / 32) * 32), 400, 12, objLadder);
+	if(bombCD < 1 && skillLadder){
+		if(bombs > 0){
+			bombs --;
+			bombCD = 30;
+			//readoutTime = 30;
+			var s = instance_create_depth( 16 + (floor(x / 32) * 32), 400, 12, objLadder);
+			s.order = world.ladderOrder;
+		} else {
+			//readoutTime = 30;
+		}
 	}
 	
 } else {
 	if(fireballTime > 0){
 		fireballCD -= fireballTime;
 		fireballTime = 0;
+		hurtTime += 10;
 	}
 }
 
@@ -125,7 +139,8 @@ if( (gamepad_button_check(global.gamepadID, gp_face3) ||
 
 
 
-if(gamepad_button_check(global.gamepadID, world.buttonShoot)){
+if(gamepad_button_check(global.gamepadID, world.buttonShoot)  ||
+		keyboard_check(ord("Z")) || keyboard_check(ord("1"))){
 	if(shotDir == 0){ shotDir = xDir; }
 	shootReleased = false;
 	playerTryToShoot();
@@ -151,7 +166,8 @@ xDPad = 0; yDPad = 0;
 
 
 if(gamepad_button_check_pressed(global.gamepadID, gp_padl) || 
-		gamepad_axis_value(global.gamepadID, gp_axislh) < -.5){
+		gamepad_axis_value(global.gamepadID, gp_axislh) < -.5 ||
+		keyboard_check(vk_left) || keyboard_check(ord("A"))){
 	
 	xDPad = -1;
 	if(!pressingJumpThisFrame){ onLadder = false; }
@@ -167,7 +183,8 @@ if(gamepad_button_check_pressed(global.gamepadID, gp_padl) ||
 
 
 if(gamepad_button_check_pressed(global.gamepadID, gp_padr) ||
-		gamepad_axis_value(global.gamepadID, gp_axislh) > .5){
+		gamepad_axis_value(global.gamepadID, gp_axislh) > .5 ||
+		keyboard_check(vk_right) || keyboard_check(ord("D"))){
 	
 	xDPad = 1;
 	if(!pressingJumpThisFrame){ onLadder = false; }
@@ -190,7 +207,8 @@ if(leftTapTime != dashMax && rightTapTime != dashMax){ // if neither direction p
 
 
 if(gamepad_button_check_pressed(global.gamepadID, gp_padd) || 
-		gamepad_axis_value(global.gamepadID, gp_axislv) > .5){
+		gamepad_axis_value(global.gamepadID, gp_axislv) > .5 ||
+		keyboard_check(vk_down) || keyboard_check(ord("S"))){
 			
 	yDPad = 1;
 	

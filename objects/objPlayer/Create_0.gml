@@ -49,6 +49,7 @@ healCDMax = 30 * 30;
 healCD = 0;
 hurtTime = 0;
 hurtTimeMax = 60;
+hurtsThisStage = 0;
 
 breathCD = 4;
 breathCDMax = 4;
@@ -137,7 +138,9 @@ xDPad = 0;
 yDPad = 0;
 inFan = 0;
 
+readoutTime = 0;
 
+ladderChargeCD = 30;
 
 
 

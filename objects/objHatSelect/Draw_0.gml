@@ -13,11 +13,14 @@ switch(cursor) {
 	case 0:
 		s += "While standing still, you can make a rapid fire\n";
 		s += "breath attack.";
-		s += "Hold X or Y to make a dash attack.";
+		s += "Hold X or Y to make a dash attack that \nblocks";
+		s += " enemy shots.";
 		break;
 	case 1:
 		s += "You heal twice as quickly.\n";
-		s += "Jump again while in the air to double jump.";
+		s += "Jump again while in the air to double jump.\n";
+		s += "Make a shot when you double jump.\n";
+		s += "When hurt, hurt nearby monsters";
 		break;
 	case 2:
 		s += "While falling, you'll damage monsters you bump.\n";
@@ -27,7 +30,8 @@ switch(cursor) {
 		break;
 	case 3:
 		s += "Jump higher.\n";
-		s += "Hold X or Y to make a dash attack.";
+		s += "Hold X or Y to make a dash attack that blocks\n";
+		s += "enemy shots.";
 		break;
 	case 4:
 		s += "Jump again while in the air to double jump.\n";
@@ -39,8 +43,7 @@ switch(cursor) {
 		s += "You heal more quickly.\n";
 		s += "Double tap left or right to sprint.\n";
 		s += "Sprint while attacking to make a special shot.\n";
-		s += "Press X or Y once per stage to make a ladder.\n";
-		s += "You can slide and jump off of walls.";
+		s += "Press X or Y to make a ladder.\n";
 		break;
 	case 6:
 		s += "Hold the jump button to jump higher. \n";
@@ -61,6 +64,8 @@ switch(cursor) {
 		s += "Nearby enemy shots you will be slowed. Nearby\n";
 		s += "falling (not flying) monsters will be slowed.\n";
 		s += "Start each screen with a shield.\n";
+		s += "If you hold jump while falling onto a monster, you'll\n";
+		s += "bounce off it.\n";
 		s += "While standing still, you can make a rapid fire\n";
 		s += "breath attack.";
 		break;

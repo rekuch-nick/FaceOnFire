@@ -8,7 +8,7 @@ timeCDMax = timeCD;
 
 remove = false;
 
-pow = 2;
+pow = 4;
 
 image_xscale = .75;
 image_yscale = .75;

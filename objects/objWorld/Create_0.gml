@@ -41,6 +41,7 @@ fadeBlockTime = 30 * 10;
 
 geyserCD = 40;
 
-
+ladderOrder = 1;
+pickupCDMax = 300;
 
 

@@ -3,7 +3,7 @@ timeCD = 12;
 
 remove = false;
 
-pow = 1;
+pow = 2;
 
 mobsHit = ds_list_create();
 

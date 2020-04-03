@@ -279,6 +279,14 @@
             }
         },
         {
+            "Key": "1a03f6e6-a69e-4411-b229-d029a329b4d0",
+            "Value": {
+                "id": "e4d35980-35cf-4fba-8c47-87f20792215e",
+                "resourcePath": "sprites\\imgFiremanMad\\imgFiremanMad.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1a84d0dc-48a2-4397-b1ef-4a4ce46e6a5d",
             "Value": {
                 "id": "08623739-0e11-476d-9fcf-3418aa3ed362",
@@ -612,6 +620,14 @@
                 "id": "9be2f6a2-4209-400e-97f7-cf4b90539a6a",
                 "resourcePath": "sprites\\imgPlayerBreath\\imgPlayerBreath.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "377d8c5f-a647-483f-bc8c-b2e899bfe73c",
+            "Value": {
+                "id": "55a6ebb5-5f8a-4920-9c6e-df2c3fa5c181",
+                "resourcePath": "scripts\\worldCreateWin\\worldCreateWin.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1303,6 +1319,14 @@
             }
         },
         {
+            "Key": "7f544494-0d88-404d-b2d1-427ae9f7167e",
+            "Value": {
+                "id": "70acfbf4-3e5c-4e5f-8caa-b6b7bd3f1f68",
+                "resourcePath": "objects\\objMegaDrop\\objMegaDrop.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "80152eac-7bb9-486f-a6dc-45faaf90053a",
             "Value": {
                 "id": "2667f652-98cb-444b-a4f3-9c6cae89286b",
@@ -1871,6 +1895,14 @@
             }
         },
         {
+            "Key": "bac09ad9-b444-4414-9828-0c3748a8556b",
+            "Value": {
+                "id": "b5c378ca-d3c2-4433-8daa-87c7fa5eb680",
+                "resourcePath": "scripts\\worldCreateLastFight\\worldCreateLastFight.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bbba60e8-737a-4948-98e3-68dd9ec49713",
             "Value": {
                 "id": "b5c495ef-8b21-4571-a688-f5e0653f0bf1",
@@ -1980,6 +2012,14 @@
                 "id": "88b6db70-5666-4256-9198-ae2dc5480d27",
                 "resourcePath": "scripts\\playerTryToShoot\\playerTryToShoot.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c5626536-4bf4-411d-852b-afb81b947e1b",
+            "Value": {
+                "id": "35334d54-0149-4452-8f26-4508916e3fd6",
+                "resourcePath": "objects\\objFiremanBoss\\objFiremanBoss.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2172,6 +2212,14 @@
                 "id": "07458a5c-daa9-4352-8ed1-abf6d45e4901",
                 "resourcePath": "sprites\\imgPlayerLob\\imgPlayerLob.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d758bea6-4a09-4301-96a8-4d415dfa68b7",
+            "Value": {
+                "id": "6af7a525-3ffb-43a1-8e04-c53d919b9b1b",
+                "resourcePath": "sounds\\bgmWin\\bgmWin.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -2647,6 +2695,8 @@
         "ea603a2d-f12e-4af8-8c6d-43175c03f7b1",
         "3a52b313-dbea-40f8-9fc7-a66f36719505",
         "0872ca56-222b-48f8-9eb4-1c7dd605e587",
+        "bac09ad9-b444-4414-9828-0c3748a8556b",
+        "377d8c5f-a647-483f-bc8c-b2e899bfe73c",
         "f673789e-ccd2-4f07-925a-d82cc3865faf",
         "adba59a0-32ad-425b-bd88-91315170c9be",
         "7e58aafd-9968-4a37-ab02-c4885a9c23a6",

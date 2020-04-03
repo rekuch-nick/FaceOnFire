@@ -17,6 +17,7 @@ if(type == "7"){ world.soundObject = bgm007; }
 if(type == "8"){ world.soundObject = bgm008; }
 if(type == "9"){ world.soundObject = bgm009; }
 if(type == "0"){ world.soundObject = bgm010; }
+if(type == "win"){ world.soundObject = bgmWin; }
 
 
 

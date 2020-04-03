@@ -13,6 +13,7 @@ if(world.gameState == "play"){
 		ds_list_add(mobsHit, other);
 		
 		other.incomingDamage += pow;
+		if(other.keyKeeper){ pow *= 2.5; }
 		//other.hp -= pow;
 	}
 	

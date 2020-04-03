@@ -4,7 +4,7 @@ worldDetectGamepad();
 
 if(icd < 1){
 
-	if(gamepad_button_check(global.gamepadID, gp_start)){
+	if(gamepad_button_check(global.gamepadID, gp_start) || keyboard_check(vk_enter)){
 		if(world.gameState == "play"){
 			playSFX(sfxPause);
 			world.pauseScreen = instance_create_depth(0, 0, -100, objPause);
@@ -36,9 +36,11 @@ if(icd < 1){
 	if(world.gameState == "pause"){
 		
 		if(gamepad_button_check_pressed(global.gamepadID, gp_padu) || 
-				gamepad_axis_value(global.gamepadID, gp_axislv) < -.5){
+				gamepad_axis_value(global.gamepadID, gp_axislv) < -.5 ||
+				keyboard_check(vk_up) || keyboard_check(ord("W"))){
 			
-			if( gamepad_button_check(global.gamepadID, world.buttonJump) ) {
+			if( gamepad_button_check(global.gamepadID, world.buttonJump) ||
+					keyboard_check(vk_space)) {
 				
 				savedCandles += candles;
 				candles = 0;
@@ -57,7 +59,8 @@ if(icd < 1){
 		}
 		
 		
-		if( gamepad_button_check(global.gamepadID, world.buttonShoot) ) {
+		if( gamepad_button_check(global.gamepadID, world.buttonShoot) || 
+				keyboard_check(ord("Z")) || keyboard_check(ord("1") )){
 			player.icd = 6;
 			world.optionsScreen = instance_create_depth(0, 0, -110, objOptionsScreen);
 		}

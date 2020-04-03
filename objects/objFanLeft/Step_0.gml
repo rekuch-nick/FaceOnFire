@@ -15,8 +15,12 @@ if(world.gameState == "play"){
 	
 		var px = floor(player.x / 32);
 		var py = floor(player.y / 32);
+		var okay = false;
+		if(abs(ySpot - py) == 1 && abs(player.y - (y + 16) < 32) && px < xSpot) { okay = true; }
+		if(ySpot == py){ okay = true; }
+		
 	
-		if(ySpot == py && !player.onLadder){
+		if(okay && !player.onLadder){
 			if(px <= xSpot && px > xSpot - 5){
 				player.inFan = -1;
 				if(playerOnGround()){

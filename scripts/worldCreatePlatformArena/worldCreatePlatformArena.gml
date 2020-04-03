@@ -55,6 +55,8 @@ if(type == 1){
 
 
 } else if (type == 4) {
+	hasFade = true;
+	
 	s = "fade1";
 	for(var b=6; b<25; b+= 5){
 		if(s == "fade1"){ s = "fade2"; } else { s = "fade1"; }

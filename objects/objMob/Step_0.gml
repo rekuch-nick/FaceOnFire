@@ -3,6 +3,19 @@
 
 if(world.gameState == "play"){
 	
+	if(fadeIn && image_yscale < 2){
+		image_xscale += .01;
+		image_yscale += .01;
+		stunTime ++;
+		if(image_yscale >= 2){
+			image_yscale = 1;
+			image_xscale = 1;
+			sprite_index = imgFiremanMad;
+			fadeIn = false;
+			hp = mhp;
+		}
+	}
+	
 	if(stunTime > 0){ stunTime --; return; }
 	
 	thinkCD --;
@@ -272,6 +285,16 @@ if(world.gameState == "play"){
 				immuneTime = 15;
 				incomingDamage = woundPerSecondMax; 
 			}
+			
+			if(damageSpawn){
+				for(var i=0; i<incomingDamage; i+=2){
+					var s = instance_create_depth(x + irandom_range(-50, 50), y + irandom_range(-50, 50), -30, objHuntDrop);
+					s.ySpeed = -15;
+					s.candleRange = 0;
+				}
+			}
+			
+			
 			hp -= incomingDamage; 
 			immuneTime = immuneTimeMax;
 		}
@@ -294,13 +317,17 @@ if(world.gameState == "play"){
 		xTempScale = 1;
 		yTempScale = 1;
 	}
-	image_xscale = 1 * xTempScale * sizeMod;
-	image_yscale = 1 * yTempScale * sizeMod;
+	if(!fadeIn){
+		image_xscale = 1 * xTempScale * sizeMod;
+		image_yscale = 1 * yTempScale * sizeMod;
+		
+		if(faceDir){ image_xscale = xDir * sizeMod; }
+		if(lookAtPlayer){ image_xscale = player.image_xscale * sizeMod; }	
+	}
 	
 	
 	
-	if(faceDir){ image_xscale = xDir * sizeMod; }
-	if(lookAtPlayer){ image_xscale = player.image_xscale * sizeMod; }
+	
 	
 	/// shooting ///
 	if(shotType != "" && hp > 0){
@@ -339,6 +366,13 @@ if(world.gameState == "play"){
 				var tx = player.x + irandom_range(-50, 50) - x;
 				var ty = player.y + irandom_range(-50, 50) - y;
 				waterShoot(6, tx, ty, "", 0, 0);
+			} else if (shotType == "boss05"){
+				waterShoot(6, -10, -10, "", 0, 0);
+				waterShoot(6, -5, -10, "", 0, 0);
+				waterShoot(6, -10, 10, "", 0, 0);
+				waterShoot(6, 10, -10, "", 0, 0);
+				waterShoot(6, 5, -10, "", 0, 0);
+				waterShoot(6, 10, 10, "", 0, 0);
 			} else if (shotType == "random") {
 				var s = instance_create_depth(x, y, -40, objEnemyShot);
 				s.moveType = ""; // s.grav = 1;
@@ -348,6 +382,43 @@ if(world.gameState == "play"){
 			} else if (shotType == "snipe") {
 				var s = instance_create_depth(x, y, -40, objEnemyShot);
 				s.moveType = "player"; s.moveSpeed = 8;
+			} else if (shotType == "final"){
+				for(var i=0; i<6; i++){
+					waterShoot(6, irandom_range(-10, 10), irandom_range(-10, 10), "", 0, 0);
+				}
+				if(irandom_range(0, 5) == 0 && (instance_number(objAcidRain) + instance_number(objBubble) + instance_number(objMobComing) < 3)){ shotType = "finalSpawn"; }
+				if(irandom_range(0, 19) == 0 && instance_number(objGeyser) == 0){
+					instance_create_depth(48, 800, 16, objGeyser);
+					instance_create_depth(752, 800, 16, objGeyser);
+				}
+			} else if (shotType == "finalSpawn"){
+				if(irandom_range(0,1)==0 || (instance_number(objAcidRain) + instance_number(objBubble) + instance_number(objMobComing) ) > 3){ shotType = "final"; }
+				
+				var tries = 0;
+				var px = floor(player.x / 32);
+				var py = floor(player.y / 32);
+				var okay = false;
+				while(tries < 1000 && !okay){
+					tries ++;
+					var a = irandom_range(1, 23);
+					var b = irandom_range(0, 20);
+					okay = true;
+
+					var t = irandom_range(0,1)==0 ? objAcidRain : objBubble;
+					
+		
+					if(world.bmap[a, b] != noone){ okay = false; }
+					if(abs(a - px) + abs(b - py) < 6){ okay = false; }
+				}
+				
+				if(okay){
+					var s = instance_create_depth((a * 32) + 16, (b * 32) + 16, -40, objMobComing);
+					s.spawnType = t;
+				}
+				
+				
+				
+				
 			}
 			
 			

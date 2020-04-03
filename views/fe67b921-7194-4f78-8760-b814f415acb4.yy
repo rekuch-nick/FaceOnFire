@@ -22,8 +22,10 @@
         "f1f14e71-d9cc-4bd7-a15c-cabbfae449cf",
         "31654fa4-7fd0-47d7-a2ed-5c173441848b",
         "ff79434d-4455-498a-9226-3e5bbd41939d",
+        "7f544494-0d88-404d-b2d1-427ae9f7167e",
         "90203b6c-4044-4bfc-8b7c-d563c75d11a1",
-        "ed6d37bc-48de-4e27-97c8-5af188a73847"
+        "ed6d37bc-48de-4e27-97c8-5af188a73847",
+        "c5626536-4bf4-411d-852b-afb81b947e1b"
     ],
     "filterType": "GMObject",
     "folderName": "mobs",
