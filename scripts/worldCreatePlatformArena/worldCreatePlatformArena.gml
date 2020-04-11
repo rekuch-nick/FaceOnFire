@@ -158,7 +158,7 @@ if(type == 1){
 
 worldAddKeys( irandom_range(4, 6), "keyEgg" );
 
-
+worldAddPickups( 0 );
 
 
 worldPositionPlayer();

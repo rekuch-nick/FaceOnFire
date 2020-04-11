@@ -10,33 +10,58 @@ draw_text(80, 60, "Lifetime Candels: " + string(player.savedCandles + player.can
 
 
 var s = "     Wooden blocks in your way? \n";
-s += "Mash the down key repeatedly to burn faster.";
 draw_text(40, 110, s);
 
 var s = "     Stuck? Ready to change hats? \n";
-s += "Hold up and press jump on this screen to return to the title.";
-draw_text(40, 190, s);
+draw_text(40, 170, s);
 
 var s = "     Wanna go to the settings screen? \n";
-s += "Press shoot on this screen.";
-draw_text(40, 270, s);
+draw_text(40, 230, s);
 
 var s = "     What's with the candles? \n";
-s += "Collecting 25 and 50 on a single life will make it possible for rank up \n";
-s += "power-ups to appear.\n";
-s += "The total collected over any number of lives will unlock new hats."
-draw_text(40, 350, s);
+draw_text(40, 290, s);
 
 var s = "     Are there keyboard controls? \n";
-s += "Arrow keys, space to jump, 1 to shoot, 2 as X and Y, and Enter as start.\n";
-s += "This game probably won't be much fun without a gamepad though.";
-draw_text(40, 480, s);
+draw_text(40, 390, s);
+
+var s = "     How does healing work? \n";
+draw_text(40, 460, s);
 
 
 draw_text(140, 750, "Press start to resume.");
 
 
 
+draw_set_color(c_ltgray);
+
+var s = "Mash the down key repeatedly to burn faster.";
+draw_text(40, 130, s);
+
+s = "Hold up and press jump on this screen to return to the title.";
+draw_text(40, 190, s);
+
+s = "Press shoot on this screen.";
+draw_text(40, 250, s);
+
+s = "Collecting 25 and 50 on a single life will make it possible for rank up \n";
+s += "power-ups to appear.\n";
+s += "The total collected over any number of lives will unlock new hats."
+draw_text(40, 310, s);
+
+s = "Arrow keys, space to jump, 1 to shoot, 2 as X and Y, and Enter as start.\n";
+s += "This game probably won't be much fun without a gamepad though.";
+draw_text(40, 410, s);
+
+s = "How long it takes to heal is directly impacted by how many times you've\n";
+s += "been hurt previously on the current stage. Picking up a heart will both\n";
+s += "heal you immediately, and reduce the current hit counter by one.";
+draw_text(40, 480, s);
+
+
+
+
+
+draw_set_color(c_white);
 if(player.rank > 1){
 	var s1 = "Rank II";
 	if(player.rank == 3){ s1 += "I"; }
@@ -55,7 +80,6 @@ if(player.rank > 1){
 	}
 	if(player.character == 3){
 		s2 += "Make a special shot when dashing. ";
-		s2 += "Shoot multiple shots at a time. ";
 	}
 	if(player.character == 4){
 		s2 += "Make a special shot when you double jump. ";

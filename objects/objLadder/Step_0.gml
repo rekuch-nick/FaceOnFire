@@ -28,13 +28,13 @@ if(world.gameState == "play"){
 
 
 	var xx = floor(x / 32);
-	for(a=xx-1; a<=xx+1; a++){
+	for(a=xx-1; a<=xx+1; a++){ if(a >= 0 && a <= 24) {
 		for(b=0; b<25; b++){
 			if(world.bmap[a, b] != noone && object_is_ancestor(world.bmap[a, b].object_index, objBreakable)){
 				world.bmap[a, b].hp -= 1;
 			}
 		}
-	}
+	}}
 	
 	
 	

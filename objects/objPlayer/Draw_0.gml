@@ -31,7 +31,7 @@ if(stage == 101){
 	
 	s = "You WON!!!"
 	draw_set_color(c_white);
-	draw_text_transformed(330, 60, s, 2.4, 2.4, 0);
+	draw_text_transformed(270, 60, s, 2.4, 2.4, 0);
 	
 	s =  "You can keep playing random levels \n";
 	s += "for as long as you like, \n"

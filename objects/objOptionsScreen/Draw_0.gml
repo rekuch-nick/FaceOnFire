@@ -18,6 +18,7 @@ draw_text_transformed(110, 140 + 360, "Delete Save: ", 2, 2, 0);
 
 draw_set_color(c_ltgray);
 draw_text_transformed(190, 640, "Press start to go back.", 2, 2, 0);
+draw_text_transformed(250, 680, "Press all four face buttons to quit.", 1, 1, 0);
 
 draw_set_color(c_green);
 sound = world.soundOn ? "on" : "off";

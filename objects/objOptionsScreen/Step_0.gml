@@ -4,7 +4,14 @@ if(player.icd < 1){
 	
 	creditScroll += .25;
 	if(creditScroll > creditSize + 80){creditScroll = 0; }
-	
+		
+		if(gamepad_button_check_pressed(global.gamepadID, world.buttonShoot) &&
+				gamepad_button_check_pressed(global.gamepadID, world.buttonJump) &&
+				gamepad_button_check_pressed(global.gamepadID, world.buttonFly) &&
+				gamepad_button_check_pressed(global.gamepadID, world.buttonCharge)){
+			
+			game_end();
+		}
 	
 		if(gamepad_button_check_pressed(global.gamepadID, gp_padu) || 
 				gamepad_axis_value(global.gamepadID, gp_axislv) < -.5){

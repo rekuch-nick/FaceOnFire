@@ -1,5 +1,9 @@
 loadGame();
 
+
+
+
+
 icd = 3;
 //stage = 1;
 //stage = 11; ///////

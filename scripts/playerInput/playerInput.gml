@@ -107,8 +107,8 @@ if(gamepad_button_check(global.gamepadID, world.buttonCharge) ||
 	
 	if(bombCD < 1 && skillLadder){
 		if(bombs > 0){
-			bombs --;
-			bombCD = 30;
+			//bombs --;
+			bombCD = 10;
 			//readoutTime = 30;
 			var s = instance_create_depth( 16 + (floor(x / 32) * 32), 400, 12, objLadder);
 			s.order = world.ladderOrder;
